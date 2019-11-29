@@ -42,6 +42,4 @@ class LibLoConan(ConanFile):
         self.info.header_only()
 
     def package_info(self):
-        libs = tools.collect_libs(self)
-        libs.extend(["lua"])
-        self.cpp_info.libs = libs
+        self.cpp_info.libs = tools.collect_libs(self)
